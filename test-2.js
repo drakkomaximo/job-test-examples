@@ -20,22 +20,22 @@ Por ejemplo, "pwke" no es un substring, dado que los caracteres no son seguidos.
 */
 
 const findDuplicates = (arrayLetter) => {
-  let duplicados = [];
+  let duplicates = [];
 
   const tempArray = [...arrayLetter].sort();
 
   for (let i = 0; i < tempArray.length; i++) {
     if (tempArray[i + 1] === tempArray[i]) {
-      duplicados.push(tempArray[i]);
+      duplicates.push(tempArray[i]);
     }
   }
 
-  return duplicados.length > 0 ? true : false 
+  return duplicates.length > 0 ? true : false 
 }
 
 const substringMaxLength = (s) => {
   let arrayString = s.split('')
-  let actualMaxLenght = 1
+  let actualMaxLength = 1
 
   arrayString.forEach((element, index) => {
     let subString = [element]
@@ -48,10 +48,10 @@ const substringMaxLength = (s) => {
         countIndex++
       }
     }
-    actualMaxLenght = actualMaxLenght < count ? findDuplicates(subString) ? count - 1 : count : actualMaxLenght
+    actualMaxLength = actualMaxLength < count ? findDuplicates(subString) ? count - 1 : count : actualMaxLength
   });
 
-  return actualMaxLenght
+  return actualMaxLength
 }
 
 const sample1 = 'abcabcbb';
